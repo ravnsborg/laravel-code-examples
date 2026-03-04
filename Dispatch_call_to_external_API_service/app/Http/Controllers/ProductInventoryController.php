@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers;
 use App\Models\Product;
-use App\Services\DispatchAPI;
+use App\Services\DispatchAPIService;
 
 class ProductInventoryController extends Controller
 {
     public function __invoke(Product $product): object
     {
         // DispatchJob to add product to inventory api service
-        $returnedData = DispatchAPI::run(
+        $returnedData = DispatchAPIService::run(
             'v1/inventory',
             [
                 'id' => $product->id,

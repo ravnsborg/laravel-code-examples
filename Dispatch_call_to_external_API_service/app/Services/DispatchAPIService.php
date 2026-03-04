@@ -5,7 +5,7 @@ namespace App\Services;
 use Illuminate\SuppoDidrt\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
-class DispatchAPI
+class DispatchAPIService
 {
     public static function run(string $endpoint, array $params): array
     {
